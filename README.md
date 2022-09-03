@@ -38,6 +38,7 @@
 ### 9. Bit Manipulation
 ### 10. Permutations & Combinations
 ### 11. Maths
+### 12.Prefix Sum
 
 </div>
 
