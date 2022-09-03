@@ -35,7 +35,7 @@ void merge(vector<int>&arr, int s, int e) {
     k = s;
 
     while(i1 < n && i2 < m) {
-        if(first[i1] < second[i2]) {
+        if(first[i1] <= second[i2]) {
             arr[k++] = first[i1++];
         }
         else{
