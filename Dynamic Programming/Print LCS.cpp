@@ -53,8 +53,8 @@ int main()
     
     string ans="";
     
-    int i=n,j=m;
-    while(i>0 && j>0)
+    int i=n,j=m;                // since the size of the dp matrix is (n+1)*(m+1)  so the laast element's index will be n,m
+    while(i>0 && j>0)		// just like if the size of an array is n then last element's index comes out to be n-1
     {
         if(s[i-1]==t[j-1]){
             ans.push_back(s[i-1]);
