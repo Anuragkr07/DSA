@@ -29,16 +29,24 @@ void inOrder(Node* root)
 
 // Function to check if tree is balanced
 
-int height(Node * root)
+int height(Node * root,int &flag)
 {
     if(!root)
         return 0;
-    int lh=height(root->left);
-    int rh=height(root->right);
+    int lh=height(root->left,flag);
+    int rh=height(root->right,flag);
 
-    if(lh==-1 && rh==-1)  return -1;
-    if( abs(lh-rh) > 1 ) return -1;
+   // if(lh==-1 && rh==-1)  return -1;
+    if( abs(lh-rh) > 1 ) flag=0;
     return 1+max(lh,rh);
+}
+    
+
+bool isBalanced(Node *root)
+{
+   int flag=1;
+   height(root,flag);
+   return flag;      
 }
 
 /* -------------------------------------------------------------------------------------------------------- */
@@ -58,7 +66,7 @@ int main()
     a->right->right=new Node(7);
     
     inOrder(a);
-    if(height(a)>0)
+    if(balanced(a)==1)
         cout<<"\n Balanced Tree";
     else
         cout<<"\nNot Balanced Tree";
