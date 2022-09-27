@@ -38,10 +38,11 @@ class Node
             }            
             else
             {
-                int a=maxi;
-                maxi=max(maxi,sum);
-                if(a!=maxi)
+                if(sum>maxi)
+                {
+                    maxi=sum;
                     ans=level;
+                }
                 level++;
                 sum=0;
                 if(!q.empty()){
