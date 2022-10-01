@@ -14,8 +14,13 @@
 
 #include<bits/stdc++.h>
 using namespace std;
-class Solution {
-public:
+
+struct TreeNode
+{
+    int val;
+    TreeNode* left, * right;
+};
+
     vector<vector<int>> levelOrder(TreeNode* root) {
         vector<vector<int>>ans;
         if(!root)
@@ -46,4 +51,3 @@ public:
         }
         return ans;
     }
-};
