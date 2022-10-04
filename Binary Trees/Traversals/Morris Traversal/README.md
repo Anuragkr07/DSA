@@ -2,7 +2,7 @@
 
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/86841935/193724055-d3437449-1f76-4fc7-b2a3-d503ec6deb6b.jpg" width="600" title="hover text">
+  <img src="https://user-images.githubusercontent.com/86841935/193724055-d3437449-1f76-4fc7-b2a3-d503ec6deb6b.jpg" width="600" title="Morris">
 
 </p>
 
