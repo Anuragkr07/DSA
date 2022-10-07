@@ -1,14 +1,16 @@
+// Problem Link : https://www.geeksforgeeks.org/create-a-matrix-with-alternating-rectangles-of-0-and-x/
+
 #include<bits/stdc++.h>
 using namespace std;
 
-void alternate(vector<vector<int>>& v, int m, int n)
+void alternate(vector<vector<char>>& v, int m, int n)
 {
     int total = m*n;
     int count=0;
     
     int startRow=0, endingRow=m-1;
     int startCol=0, endingCol=n-1;
-    int insert = 1;
+    int insert = 'X';
     while(count<total)
     {
         for(int i=startCol; count<total && i<=endingCol; i++)
@@ -32,23 +34,24 @@ void alternate(vector<vector<int>>& v, int m, int n)
         }
         endingRow--;
         
-        for(int i=endingRow; count<total && i>=startRow; i++)
+        for(int i=endingRow; count<total && i>=startRow; i--)
         {
-            v[i][endingCol] = insert;
+            v[i][startCol] = insert;
             count++;
         }
+        startCol++;
         
-        if(insert == 1) insert =0;
-        else insert =1;
+        if(insert == 'X') insert ='O';
+        else insert ='X';
     }
 }
 
 int main()
 {
-    int m=5,n=5;
-    vector<vector<int>>v(m , vector<int>(n,-1));
+    int m=6,n=7;
+    vector<vector<char>>v(m , vector<char>(n,'$'));
     alternate(v,m,n);
-    cout<<v.size();
+    cout<<v.size()<<" "<<v[0].size()<<"\n\n";
     for(int i=0; i<m; i++)
     {
         for(int j=0; j<n; j++)
